@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Vẽ hình chữ nhật</h2>
+    <canvas style="border: 1px solid black;" id="canvas_rectangle"></canvas>
+    
+    <script>
+        //  function Rectangle(width, height, area, perimeter){
+        //     this.width = width,
+        //     this.height = height,
+        //     this.area = function area()
+        //     { console.log("widht x height"); },
+        //     this.perimeter = function perimeter()
+        //     { console.log("(width + height)x2"); },
+        //  }
+        let cvrec = document.getElementById("canvas_rectangle");
+        let ctxrec = cvrec.getContext("2d")
+        ctxrec.getStyle = "violet";
+        ctxrec.fillRect(40,40,120,40);
+
+        function Rectangle(widht, height){
+            this.widht = widht,
+            this.height = height,
+            this.area = function getArea(){
+                return this.widht*this.height;
+            }
+            this.perimeter = function getPerrmeter(){
+                return (this.widht+this.height)*2;
+            }
+        }
+        let rec = new Rectangle(20,40);
+        console.log("Diện tích hình chữ nhật: ",rec.area());
+        console.log("Chu vi hình chữ nhật: ",rec.perimeter());
+        
+    </script>
+</body>
+</html>
