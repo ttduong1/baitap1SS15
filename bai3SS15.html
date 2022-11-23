@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            height: 50px;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="inputMess"/>
+    <script>
+        // B1: Khởi tạo đối tượng
+        function Mobile(pin, dragMess, receiveMess, sendMess, status){
+            this.pin = pin;
+            this.dragMess = dragMess;
+            this.receiveMess = receiveMess;
+            this.sendMess = sendMess;
+            this.status = status;
+            this.cosumption = this.pin;
+
+            let checkStatus = function checkStatus () {
+                if (this.status == false) {
+                    console.log("Điện thoại mày đang tắt");
+                } else {
+                    console.log("Điện thoại mày đang hoạt động");
+                }
+            };
+
+            this.turnMobile = function () {
+                if (this.status == false) {
+                    this.status == true;
+                    console.log("Chào mừng mày quay lại");
+                } else {
+                    console.log("Cút đi ngủ");
+                }
+            };
+
+            this.statusPin = function () {
+                if (pin < 100 ) {
+                    console.log("Mày đang sạc pin");
+                } else  {
+                    console.log("Pin đầy rồi sạc làm đéo gì !");
+                }
+            };
+            this.draftMessage = function () {
+                if (status) {
+                    console.log(this.dragMess);
+                    this.cosumption--;
+                }
+            };
+
+            this.receiveMessage = function () {
+                if (status) {
+                    for (var i = 0; i < this.receiveMess.lenght; i++) {
+                        document.write(this.receiveMess[i] + "<br>");
+                        this.cosumption--;
+                    }
+                }
+            };
+
+            this.sendMessage = function() {
+                if (status) {
+                    for (var i = 0; i < this.sendMess.lenght; i++) {
+                        document.write(this.receiveMess[i] + "<br>");
+                        this.cosumption--;
+                    }
+                }
+            };
+             
+            this.boxSendMessage = function () {
+                if (status) {
+                    console.log(this.sendMess);
+                    this.cosumption--;
+                }
+            };
+
+            this.boxRecelveMessage = function () {
+                if (status) {
+                    console.log(this.receiveMess);
+                    this.cosumption--;
+                }
+            };
+
+            this.cosumptionPin = function () {
+                if (status) {
+                    console.log(this.cosumption);
+                }
+            }
+        }
+
+        let mobile = new Mobile(
+            80,
+            "Mày cởi đồ ra",
+            ["Tao là florentino", "Ok"],
+            ["Mày là ai ?", "Mày muốn gì"],
+            true
+        );
+        mobile.draftMessage();
+        mobile.receiveMessage();
+        mobile.sendMessage();
+        console.log("Hộp thư gửi:");
+        mobile.boxSendMessage();
+        console.log("Hộp thư đến:")
+        mobile.boxRecelveMessage();
+        console.log("Sau khi dùng các chức năng pin còn lại của mày:");
+        mobile.cosumptionPin();
+    </script>
+</body>
+</html>
