@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Chuyển độ C sang độ F và Kenvin</h3>
+    <script>
+        function Temperature(Celsius, Fahrenheit, Kelvin){
+            this.Celsius = Celsius,
+            this.Fahrenheit = Fahrenheit,
+            this.Kelvin = Kelvin,
+            this.Convert = function getConvert(){
+                return this.Fahrenheit = (this.Celsius*1,8)+32;
+            }
+            this.Convert2 = function getConvert(){
+                return  this.Kelvin = this.Celsius+273,15;
+            }
+        }
+        let tem = new Temperature(25);
+        console.log("Độ F",tem.Convert());
+        console.log("Dộ K",tem.Convert2());
+        
+    </script>
+    </body>
+</html>
